@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/assets/style.css" type=text/css rel=stylesheet />
+        <title>  Usuarios </title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th></th>
+                <th></th>
+            </thead>
+
+            <!-- Despliega la informacion de los usuarios -->
+            <% Object.keys(Users).forEach(function(prop) { %>
+            <tr>
+            <td> <%= Users[prop].name %> </td> 
+            <td> <%= Users[prop].email %> </td>
+            <td> <%= Users[prop].password%> </td>
+            <td><a href="<%= `findById/${Users[prop]._id}` %>">Editar</a></td> <!-- Redirecciona a que modifiques los datos -->
+            <td><a href="#">Borrar</a></td>
+            </tr>
+        <%});%>
+        </table>
+
+        <div id="agregarUsuario">
+            <a href="addUser">Agregar</a> 
+        </div>
+    </body>
+</html> 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href=/assets/style.css type=text/css rel=stylesheet />
+    <title>Actualizar usuario</title>
+
+    <body>
+        <h1> Actualizar usuario</h1>
+        <!-- Formulario para actualizar datos. Hace uso de 'myUser' para recuperar la información almacenada y mostrarla en formulario. -->
+        <form action="/updateUser" method="post">
+            <label for="name"> Name:</label><br>
+            <input type="text" id="name" name="name" value="<%= `${myUser.name}`%>"><br><br>
+            <label for="email"> Email: </label><br>
+            <input type="text" id="email" name="email" value="<%= `${myUser.email}`%>"><br><br>
+            <label for="password">Password: </label><br>
+            <input type="text" id="password" name="password" value="<%= `${myUser.password}`%>"><br><br>
+            <label for="objId">ID: </label><br>
+            <input type="text" id="objId" name="objId" value="<%= `${myUser._id}`%>"><br><br> <!-- Se hace uso del ID para identificar el registro y lograr modificarlo-->
+            <button type="submit">Actualizar</button>
+        </form>
+    </body>
+</html> 
